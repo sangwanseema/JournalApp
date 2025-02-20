@@ -12,7 +12,7 @@ The application follows a structured folder hierarchy and uses Hibernate for dat
 5. MySQL database integration
 
 ## Folder Structure
-![img.png](FolderStructure .png)
+![img_1.png](img_1.png)
 
 
 # API Endpoints
