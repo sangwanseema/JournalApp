@@ -1,0 +1,12 @@
+
+logging:
+  level: INFO
+  loggers:
+    com.flipkart.journalapp: DEBUG
+
+#Database connection
+database:
+  driverClass: com.mysql.cj.jdbc.Driver
+  user: root
+  password: 01701032021@igdtuw
+  url: jdbc:mysql://localhost:3306/user

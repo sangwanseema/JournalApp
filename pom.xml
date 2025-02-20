@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>JournalApp</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>18</maven.compiler.source>
+        <maven.compiler.target>18</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Main-Class>com.flipkart.JournalApplication</Main-Class>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-shade-plugin</artifactId>
+                        <version>3.3.0</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>shade</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+            </plugin>
+
+
+
+        </plugins>
+    </build>
+
+     <dependencies>
+         <!-- Dropwizard Core Dependency -->
+         <dependency>
+             <groupId>io.dropwizard</groupId>
+             <artifactId>dropwizard-core</artifactId>
+             <version>2.1.7</version>
+         </dependency>
+
+<!--         Added Lombok dependency to generate getter, setter, and no-argument constructor annotations for the User class-->
+         <dependency>
+             <groupId>org.projectlombok</groupId>
+             <artifactId>lombok</artifactId>
+             <version>1.18.24</version>
+             <scope>provided</scope>
+         </dependency>
+
+<!--         javax.persistence-api: Provides the JPA API and annotations (like @Entity, @Id, @Column, etc.) -->
+<!--         but does not contain the implementation (which is provided by Hibernate)-->
+         <dependency>
+             <groupId>javax.persistence</groupId>
+             <artifactId>javax.persistence-api</artifactId>
+             <version>2.2</version> <!-- JPA API version -->
+         </dependency>
+
+
+         <!-- Hibernate Core is used for Object-Relational Mapping (ORM),
+          allowing automatic mapping of Java objects to database tables and
+          simplifying database operations like CRUD (Create, Read, Update, Delete)
+          without writing raw SQL queries. -->
+
+         <dependency>
+             <groupId>io.dropwizard</groupId>
+             <artifactId>dropwizard-hibernate</artifactId>
+             <version>2.1.0</version>
+         </dependency>
+         <dependency>
+
+             <groupId>org.hibernate</groupId>
+             <artifactId>hibernate-core</artifactId>
+             <version>5.4.30.Final</version>
+         </dependency>
+
+
+
+         <dependency>
+             <groupId>mysql</groupId>
+             <artifactId>mysql-connector-java</artifactId>
+             <version>8.0.27</version>
+         </dependency>
+
+         <dependency>
+             <groupId>io.dropwizard.modules</groupId>
+             <artifactId>dropwizard-testing-junit4</artifactId>
+             <version>4.0.12</version>
+         </dependency>
+
+         <dependency>
+             <groupId>io.dropwizard</groupId>
+             <artifactId>dropwizard-assets</artifactId>
+             <version>4.0.12</version>
+         </dependency>
+
+         <dependency>
+             <groupId>org.assertj</groupId>
+             <artifactId>assertj-core</artifactId>
+             <version>3.6.2</version>
+             <scope>test</scope>
+         </dependency>
+
+
+     </dependencies>
+</project>
